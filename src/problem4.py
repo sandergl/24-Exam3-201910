@@ -2,8 +2,8 @@
 Exam 3, problem 4.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, their colleagues,
-         and PUT_YOUR_NAME_HERE.  October, 2018.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Garrett Sanders.  October, 2018.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -76,8 +76,45 @@ And this one for n=14:
 
     :type n: int
     """
+    start_up = 9
+    ending = 2
+    for k in range(n):
+        for i in range(n - k - 1):
+            print(' ', end='')
+        if n < 10:
+            for d in range(1, k + 2):
+                print(d, end='')
+            print(' ', end='')
+        if n >= 10:
+            past_9 = k - 9 + 1
+            for t in range(1, ending):
+                print(t, end='')
+            if k >= 9:
+                for q in range(0, past_9):
+                    print(q, end='')
+            print(' ', end='')
+            if k < 8:
+                ending = ending + 1
+        for f in range(k + 2, 0, -1):
+            print('*', end='')
+        print(' ', end='')
+        if n < 10:
+            for d in range(n - k, 0, -1):
+                print(d, end='')
+            print(' ', end='')
+        if n >= 10:
+            end = n - 10 - k
+            for s in range(end, -1, -1):
+                print(s, end='')
+            for r in range(start_up, 0, -1):
+                print(r, end='')
+            print(' ', end='')
+            if k >= end + 5:
+                start_up = start_up - 1
+        print()
+
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Some tests are already written for you (above).
     ####################################################################
     # IMPORTANT: In your final solution for this problem,
